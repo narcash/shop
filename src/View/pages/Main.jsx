@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from '../components/Header';
+import CategoryPanel from '../components/CategoryPanel';
 
 const Main = () => {
   return (
     <div className='mainPage'>
-      <h1>Main Page</h1>
+      <Header />
+      <CategoryPanel />
     </div>
   );
 };
