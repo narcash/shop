@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import bags from '../assets/icons/bags.png';
-import watches from '../assets/icons/watches.png';
-import shoes from '../assets/icons/shoes.png';
-import glasses from '../assets/icons/glasses.png';
-import audio from '../assets/icons/audio.png';
+import bags from '../assets/icon_menu/Bags';
+import watches from '../assets/icon_menu/Watch';
+import shoes from '../assets/icon_menu/Shoes';
+import glasses from '../assets/icon_menu/Glasses';
+import audio from '../assets/icon_menu/Headphone';
 
 import './component.css';
 const CategoryPanel = () => {
