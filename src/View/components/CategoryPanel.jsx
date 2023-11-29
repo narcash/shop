@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
 
-import bags from '../assets/icon_menu/Bags';
-import watches from '../assets/icon_menu/Watch';
-import shoes from '../assets/icon_menu/Shoes';
-import glasses from '../assets/icon_menu/Glasses';
-import audio from '../assets/icon_menu/Headphone';
-
 import './component.css';
+import ImageSvg from './ImageSvg';
 const CategoryPanel = () => {
   const [active, setActive] = useState([
-    { title: 'Bags', icon: bags, active: false },
-    { title: 'Watches', icon: watches, active: false },
-    { title: 'Shoes', icon: shoes, active: false },
-    { title: 'Glasses', icon: glasses, active: false },
-    { title: 'Audio', icon: audio, active: false },
+    { title: 'Bags', icon: 'Bags', active: false },
+    { title: 'Watches', icon: 'Watch', active: false },
+    { title: 'Shoes', icon: 'Shoes', active: false },
+    { title: 'Glasses', icon: 'Glasses', active: false },
+    { title: 'Audio', icon: 'Headphone', active: false },
   ]);
 
   const handleChangeCategory = title => {
@@ -42,10 +37,13 @@ const CategoryPanel = () => {
               `${elem.active ? ' activeCircle' : ''}`
             }
           >
-            <img
-              src={elem.icon}
-              alt={elem.title}
-              className='categoryPanelComponent_item-img'
+            <ImageSvg
+              config={{
+                icon: elem.icon,
+                fill: 'none',
+                stroke: 'blue',
+                size: 30,
+              }}
             />
           </div>
           <p className='categoryPanelComponent_item-title'>{elem.title}</p>
