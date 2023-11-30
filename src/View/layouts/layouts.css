@@ -1,0 +1,7 @@
+.productList_items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 40px 0;
+}

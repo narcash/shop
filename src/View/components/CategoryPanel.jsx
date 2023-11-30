@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import bags from '../assets/icons/bags.png';
-import watches from '../assets/icons/watches.png';
-import shoes from '../assets/icons/shoes.png';
-import glasses from '../assets/icons/glasses.png';
-import audio from '../assets/icons/audio.png';
+import "./component.css";
+import ImageSvg from "./ImageSVG";
 
-import './component.css';
 const CategoryPanel = () => {
   const [active, setActive] = useState([
-    { title: 'Bags', icon: bags, active: false },
-    { title: 'Watches', icon: watches, active: false },
-    { title: 'Shoes', icon: shoes, active: false },
-    { title: 'Glasses', icon: glasses, active: false },
-    { title: 'Audio', icon: audio, active: false },
+    { title: "Bags", icon: "Bags", active: false },
+    { title: "Watches", icon: "Watch", active: false },
+    { title: "Shoes", icon: "Shoes", active: false },
+    { title: "Glasses", icon: "Glasses", active: false },
+    { title: "Audio", icon: "Headphone", active: false },
   ]);
 
-  const handleChangeCategory = title => {
-    const result = active.map(elem =>
+  const handleChangeCategory = (title) => {
+    const result = active.map((elem) =>
       elem.title === title
         ? { ...elem, active: true }
         : { ...elem, active: false }
@@ -26,29 +22,32 @@ const CategoryPanel = () => {
   };
 
   return (
-    <div className='categoryPanelComponent'>
-      {active.map(elem => (
+    <div className="categoryPanelComponent">
+      {active.map((elem) => (
         <button
           className={
-            'categoryPanelComponent_item' +
-            `${elem.active ? ' activeCategory' : ''}`
+            "categoryPanelComponent_item" +
+            `${elem.active ? " activeCategory" : ""}`
           }
           key={elem.title}
           onClick={() => handleChangeCategory(elem.title)}
         >
           <div
             className={
-              'categoryPanelComponent_item-circle' +
-              `${elem.active ? ' activeCircle' : ''}`
+              "categoryPanelComponent_item-circle" +
+              `${elem.active ? " activeCircle" : ""}`
             }
           >
-            <img
-              src={elem.icon}
-              alt={elem.title}
-              className='categoryPanelComponent_item-img'
+            <ImageSvg
+              config={{
+                icon: elem.icon,
+                fill: "none",
+                stroke: "gray",
+                size: 30,
+              }}
             />
           </div>
-          <p className='categoryPanelComponent_item-title'>{elem.title}</p>
+          <p className="categoryPanelComponent_item-title">{elem.title}</p>
         </button>
       ))}
     </div>
