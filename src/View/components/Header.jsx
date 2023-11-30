@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Header = () => {
   return (
-    <div className='headerComponent'>
+    <div className="headerComponent">
       <h1>Explorer Shop</h1>
     </div>
   );
